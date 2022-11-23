@@ -6,7 +6,6 @@ export const main = (data: number[]): number => {
   let index = 0;
   let counter = 0;
   while (true) {
-    console.log("coucou 👋🏻", counter);
     const frequency = data[index];
     currentFrequency += frequency;
     if (frequencies.indexOf(currentFrequency) !== -1) {
@@ -23,7 +22,7 @@ export const main = (data: number[]): number => {
   return currentFrequency;
 };
 
-const path = "../data";
-const data = await parseFile(path);
+const path = "./data";
+const data = await parseFile(import.meta.url, path);
 
 console.log(main(data));
